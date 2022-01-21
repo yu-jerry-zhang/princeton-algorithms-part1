@@ -101,15 +101,10 @@ public class Percolation {
         test.open(5, 1);
         test.open(5, 3);
         test.open(4, 3);
-/*
-        int n=test.id[1][0];
-        boolean a = uf1.connected(test.trans(3,3), test.trans(5,2) );
-        System.out.println(n);
-*/
         System.out.println(test.id[1][0]);
         System.out.println(test.numberOfOpenSites());
         System.out.println("Is this point full?" + test.isFull(4, 3));
         System.out.println("Is this point open?" + test.isOpen(4, 3));
-        System.out.println("Is this model percolate?"+test.percolates());
+        System.out.println("Is this model percolate?" + test.percolates());
     }
 }
