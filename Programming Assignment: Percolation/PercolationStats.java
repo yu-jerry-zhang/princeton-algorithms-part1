@@ -4,6 +4,12 @@ import edu.princeton.cs.algs4.StdStats;
 public class PercolationStats {
     private final int trials;
     private final double[] mean;
+    
+    private void validate(int n, int t) {
+        if (n <= 0 || t <= 0) {
+            throw new IllegalArgumentException("illegal value of n or trials");
+        }
+    }
 
     // perform independent trals on an n-by-n grid
     public PercolationStats(int n, int trials) {
@@ -22,12 +28,6 @@ public class PercolationStats {
                 }
             }
             mean[i] = count / (n * n);
-        }
-    }
-
-    private void validate(int n, int t) {
-        if (n <= 0 || t <= 0) {
-            throw new IllegalArgumentException("illegal value of n or trials");
         }
     }
 
@@ -51,6 +51,7 @@ public class PercolationStats {
         return mean() + (1.96 * stddev()) / Math.sqrt(trials);
     }
 
+    // test client (see below)
     public static void main(String[] args) {
         PercolationStats test = new PercolationStats(10, 50000);
         System.out.println("mean = " + test.mean());
